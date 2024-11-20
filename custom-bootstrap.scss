@@ -1,0 +1,243 @@
+// Override default variables
+$primary: #023663; // Change primary color to a different shade
+$font-size-base: 1.03rem; // Change base font size
+$body-bg: #f8f9fa; // Change background color
+$header-bg-color: #005f73;
+$brand-font-weight: bold;
+$link-color: white; // Default color for the links
+$link-hover-color: #94d2bd; // Hover color for the links
+$card-title-color: #2e2e2e;
+$card-text-color: #313131;
+$section-bg-color: #f1faee;
+$footer-bg-color: #005f73; // Dark background color for footer
+$footer-text-color: white; // White text color for footer
+$icon-color: white; // Icon color
+
+// Import Bootstrap's functions, variables, and mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Import Bootstrap's main styles
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Global Styles
+html, body {
+  background-color: $body-bg;
+  font-size: $font-size-base;
+  color: #333; // Set a general text color for the body
+  line-height: 1.5; // Set line height for readability
+}
+
+* {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+// Header Styles
+.header {
+  background-color: $header-bg-color;
+
+  .brand-title {
+    font-weight: $brand-font-weight;
+    color: $link-color;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: $link-color;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+
+  .btn-outline-light {
+    border-color: $link-color;
+    color: $link-color;
+    margin-left: 15px;
+
+    &:hover {
+      background-color: $link-hover-color;
+      color: $header-bg-color;
+      border-color: $header-bg-color;
+    }
+  }
+}
+
+.custom-login-btn {
+  background-color: $header-bg-color;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: $link-hover-color;
+    color: $header-bg-color;
+  }
+}
+
+// Carousel Styles
+.carousel-item img {
+  max-height: 650px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item:nth-child(3) img {
+  object-position: 50% 27%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+  width: 80%;
+  background-color: rgba(241, 250, 238, 0.7);
+  height: 26%;
+  border-radius: 1rem;
+
+  h5 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $header-bg-color;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $header-bg-color;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 3; // Ensure controls are above the overlay
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent; // Keep icons visible
+}
+
+// Section Styles
+.section {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+
+  h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    color: $header-bg-color;
+  }
+}
+
+// Card Layout Styles
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+// Card Styles
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); // Slightly enlarge the card on hover
+  }
+
+  &-custom-border {
+    border: 1px solid $header-bg-color;
+  }
+
+  .card-title {
+    color: $card-title-color;
+    text-align: center;
+    margin-top: 0.2rem;
+    font-size: 1.4rem;
+  }
+
+  .card-text {
+    padding: 0.5rem;
+    text-align: center;
+    color: $card-text-color;
+    font-size: 1.1rem;
+  }
+}
+
+// Recent Projects Section
+.section-recent-projects {
+  background-color: $section-bg-color;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  h3 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    color: $header-bg-color;
+  }
+
+  .recent-projects-card {
+    width: 22rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+  }
+}
+
+// Footer Styles
+.footer {
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+  padding: 2rem 0;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-paragraph {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+    .social-icon {
+      color: $icon-color;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+}
